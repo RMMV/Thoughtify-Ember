@@ -20,6 +20,7 @@ module.exports = function(environment) {
 	};
 
 	ENV['simple-auth'] = {
+		authenticationRoute: 'login',
 		authorizer: 'simple-auth-authorizer:token'
 	};
 
