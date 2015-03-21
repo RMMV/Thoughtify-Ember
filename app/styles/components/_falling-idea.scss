@@ -1,6 +1,9 @@
 .falling-idea {
+	@include border-radius(6px);
+	
+	// generic styling
+	border: 1px solid black;
 	width: 20rem;
-	height: 10rem;
-	background-color:white;
-	@include border-radius(10px);
+	height: 5rem;
+	padding: 1rem;
 }
