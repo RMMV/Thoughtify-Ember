@@ -37,6 +37,8 @@
     "ember-export-application-global": "^1.0.2"
   },
   "dependencies": {
-    "ember-cli-simple-auth-token": "^0.6.0"
+    "ember-cli-simple-auth-token": "^0.6.0",
+    "ember-velocity-mixin": "^0.2.2",
+    "liquid-fire": "^0.18.0"
   }
 }
