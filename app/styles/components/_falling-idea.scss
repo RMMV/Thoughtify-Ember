@@ -1,15 +1,19 @@
+$height: 5rem;
+$width: 20rem;
+$padding: 1rem;
+
 .falling-idea {
 	@include border-radius(6px);
 
 	// generic styling
 	border: 1px solid black;
-	width: 20rem;
-	height: 5rem;
-	padding: 1rem;
+	width: $width;
+	height: $height;
+	padding: $padding;
 
 	background-color: white;
 	
 	// setup for falling
 	position: fixed;
-	top:0vh;
+	top:-($height + 2 * $padding);
 }

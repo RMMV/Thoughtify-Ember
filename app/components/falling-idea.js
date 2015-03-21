@@ -6,7 +6,7 @@ let events = {
 
 		let eventualStyles = {
 			top: '100vh',
-			rotateZ: this.get('rotate'),
+			rotateZ: this.get('rotation'),
 		};
 
 		let options = {
@@ -28,5 +28,5 @@ export default Ember.Component.extend(
 	left: 0,
 	delay: 0,
 	duration: 4999, 
-	rotate: 30
+	rotation: 30
 });
