@@ -6,7 +6,7 @@ let events = {
 
 		let $ = Ember.$;
 
-		let callback = this.get('afterFall');
+		let callback = this.get('after-fall');
 
 		let eventualStyles = {
 			top: '100vh',
@@ -35,5 +35,5 @@ export default Ember.Component.extend(
 		delay: 0,
 		duration: 4999,
 		rotation: 30,
-		afterFall: function(){}
+		'after-fall': function(){}
 	});

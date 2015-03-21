@@ -14,7 +14,11 @@ $padding: 1rem;
 	
 	// setup for falling
 	position: fixed;
-	top:-($height + 2 * $padding);
-
+	top: -($height + 2 * $padding);
+	
+	// make sure we can click on the element
 	cursor: pointer;
+
+	// -273 is lowest z-index
+	z-index: -272;
 }

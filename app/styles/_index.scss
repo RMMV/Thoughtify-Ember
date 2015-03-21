@@ -1,3 +1,9 @@
-body {
+.falling-ideas-container {
 	background-color: #3498db;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	z-index:-273;
 }

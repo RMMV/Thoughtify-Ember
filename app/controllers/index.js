@@ -9,7 +9,7 @@ function createIdeas(count) {
 	for (let i = 0; i < count; i++) {
 		arr.pushObject({
 			delay: i * 1500,
-			duration: inRange(2000,3000),
+			duration: inRange(2000, 4000),
 			left: inRange(0, 80) + 'vw',
 			rotation: inRange(-45, 45)
 		});
@@ -21,11 +21,10 @@ let ideas = createIdeas(2);
 
 export default Ember.Controller.extend({
 	fallingIdeas: ideas,
-	createIdea: function(){
-		console.log('this thing was called', this);
+	createIdea: function() {
 		ideas.pushObject({
 			delay: 1500,
-			duration: inRange(2000,3000),
+			duration: inRange(2000, 3000),
 			left: inRange(0, 80) + 'vw',
 			rotation: inRange(-45, 45)
 		});
