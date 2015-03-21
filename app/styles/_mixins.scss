@@ -5,7 +5,7 @@
           border-radius: $radius;
 }
 
-@mixin transition($properties) {
-	-webkit-transition: $properties;
-		    transition: $properties;
+@mixin transition($properties, $additional:"") {
+	-webkit-transition: $properties, unquote($additional);
+		    transition: $properties, unquote($additional);
 }
