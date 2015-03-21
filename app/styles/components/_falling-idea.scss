@@ -15,4 +15,6 @@ $padding: 1rem;
 	// setup for falling
 	position: fixed;
 	top:-($height + 2 * $padding);
+
+	cursor: pointer;
 }
