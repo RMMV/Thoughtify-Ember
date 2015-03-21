@@ -1,23 +1,15 @@
 .falling-idea {
 	@include border-radius(6px);
-	@include transition(
-		top 1s cubic-bezier(.45,.04,.73,.14),
-		transform 1s cubic-bezier(.45,.04,.73,.14)
-	);
 
 	// generic styling
 	border: 1px solid black;
 	width: 20rem;
 	height: 5rem;
 	padding: 1rem;
+
+	background-color: white;
 	
 	// setup for falling
 	position: fixed;
-	top: 4rem;
-	left: 2rem;
-}
-
-.falling-idea.falling {
-	top: 50rem;
-	transform: translateX(2px) rotate(30deg) translateY(10px);
+	top:0vh;
 }

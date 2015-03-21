@@ -1,3 +1,7 @@
 <h1> It's raining thoughts! </h1>
 
-{{falling-idea}}
+{{#each fallingIdeas as |idea index|}}
+	{{#falling-idea duration=idea.duration delay=idea.delay rotate=idea.rotate left=idea.left}}
+		Nigga, what's up
+	{{/falling-idea}}
+{{/each}}
