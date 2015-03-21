@@ -4,3 +4,8 @@
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+
+@mixin transition($properties) {
+	-webkit-transition: $properties;
+		    transition: $properties;
+}

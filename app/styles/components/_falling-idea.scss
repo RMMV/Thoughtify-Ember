@@ -1,9 +1,19 @@
 .falling-idea {
 	@include border-radius(6px);
+	@include transition(top 2s ease);
 	
 	// generic styling
 	border: 1px solid black;
 	width: 20rem;
 	height: 5rem;
 	padding: 1rem;
+	
+	// setup for falling
+	position: fixed;
+	top: 4rem;
+	left: 2rem;
+}
+
+.falling-idea.falling {
+	top: 10rem;
 }
