@@ -6,12 +6,11 @@ $padding: 1rem;
 	@include border-radius(6px);
 
 	// generic styling
-	border: 1px solid black;
 	width: $width;
 	height: $height;
 	padding: $padding;
 
-	background-color: white;
+	background-color: rgba(255,255,255,0.75);
 	
 	// setup for falling
 	position: fixed;
