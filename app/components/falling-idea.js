@@ -4,9 +4,8 @@ import layout from '../templates/components/falling-idea';
 let events = {
 	didInsertElement: function() {
 
+		let self = this;
 		let $ = Ember.$;
-
-		let callback = this.get('after-fall');
 
 		let eventualStyles = {
 			top: '100vh',
@@ -23,7 +22,9 @@ let events = {
 
 		$.Velocity
 			.animate(this.element, eventualStyles, options)
-			.then(callback);
+			.then(function(){
+				self.sendAction('after-fall');
+			});
 	}
 };
 
@@ -35,5 +36,4 @@ export default Ember.Component.extend(
 		delay: 0,
 		duration: 4999,
 		rotation: 30,
-		'after-fall': function(){}
 	});

@@ -19,8 +19,7 @@ function createIdeas(count) {
 
 let ideas = createIdeas(2);
 
-export default Ember.Controller.extend({
-	fallingIdeas: ideas,
+let actions = {
 	createIdea: function() {
 		ideas.pushObject({
 			delay: 1500,
@@ -29,4 +28,9 @@ export default Ember.Controller.extend({
 			rotation: inRange(-45, 45)
 		});
 	}
+}
+
+export default Ember.Controller.extend({
+	fallingIdeas: ideas,
+	actions: actions
 });
