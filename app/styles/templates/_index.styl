@@ -1,43 +1,31 @@
-.index {
-	
-	expand() {
-		position fixed;
-		top 0;
-		bottom 0;
-		left 0;
-		right 0;
-	}
-	
-	shift-down() {
-		position relative;
-		top 25vh;
-	}
-
-	.website-intro {
-		font-family 'Open Sans';
-		color white;
+[data-template='index']
+	>section.sky
+		// fill the entire screen
+		expand() 
+			position fixed
+			top 0
+			bottom 0
+			left 0
+			right 0
 		
-		text-align center;
-		shift-down();
+		shift-down() 
+			position relative
+			top 20vh
 
-		h1 {
-			font-size 500%;
+		expand()
+		background-color #3498db
+
+		hgroup
+			font-family 'Open Sans'
+			color white
 			
-			// ensure the slogan and the website title 
-			// are adaquately spaced out
-			margin-bottom 0.1em;
-		}
-	}
-	
-	.sky {
-		
-		// fill the entire background
-		expand();
-		
-		// the sky should be blue
-		background-color #3498db;
+			text-align center
+			shift-down()
 
-		// it has the lowest possible z-index in this application
-		z-index -273;
-	}
-}
+			h1
+				font-size 500%
+				
+				// ensure the slogan and the website title 
+				// are adaquately spaced out
+				margin-bottom 0.1em
+	

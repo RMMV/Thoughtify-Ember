@@ -1,13 +1,13 @@
-<section class="index">
-	
-	{{auth-nav login='login' register='register'}}
-
-	<hgroup class="website-intro">
-		<h1> Thoughtify </h1>
-		<h2> Lorem ipsum dolor sit amet, consectetur. </h2>
-	</hgroup>
-
+<section data-template="index">
 	<section class="sky">
+
+		{{auth-nav login='login' register='register'}}
+
+		<hgroup>
+			<h1> Thoughtify </h1>
+			<h2> Lorem ipsum dolor sit amet, consectetur. </h2>
+		</hgroup>
+
 		{{#each fallingIdeas as |idea index|}}
 			{{#falling-idea 
 				duration=idea.duration 
@@ -20,5 +20,4 @@
 			{{/falling-idea}}
 		{{/each}}
 	</section>
-
 </section>
