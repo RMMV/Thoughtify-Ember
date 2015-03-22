@@ -29,12 +29,12 @@ let actions = {
 		});
 	},
 	login: function() {
-		console.log('login was clicked');
+		this.transitionToRoute('login');
 	},
 	register: function() {
 		console.log('register was clicked');
 	}
-}
+};
 
 export default Ember.Controller.extend({
 	fallingIdeas: ideas,
