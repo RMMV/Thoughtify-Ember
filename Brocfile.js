@@ -1,8 +1,14 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var nib = require('nib');
+var jeet = require('jeet');
 
-var app = new EmberApp();
+var app = new EmberApp({
+	stylusOptions: {
+		use: [ nib(), jeet()],
+	}
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
