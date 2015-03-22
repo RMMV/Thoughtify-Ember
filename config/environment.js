@@ -38,7 +38,9 @@ module.exports = function(environment) {
 	};
 
 	ENV['contentSecurityPolicy'] = {
-		'connect-src': "https://localhost:1337"
+		'connect-src': "https://localhost:1337",
+		'font-src': "http://fonts.googleapis.com http://fonts.gstatic.com",
+		'style-src': "'self' http://fonts.googleapis.com"
 	};
 
 	if (environment === 'development') {
