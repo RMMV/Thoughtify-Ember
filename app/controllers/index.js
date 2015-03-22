@@ -27,6 +27,12 @@ let actions = {
 			left: inRange(0, 80) + 'vw',
 			rotation: inRange(-45, 45)
 		});
+	},
+	login: function() {
+		console.log('login was clicked');
+	},
+	register: function() {
+		console.log('register was clicked');
 	}
 }
 
