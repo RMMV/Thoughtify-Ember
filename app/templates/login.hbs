@@ -1,7 +1,9 @@
-<form {{action 'authenticate' on='submit'}}>
-	<label for="identification">Login</label>
-	{{input id='identification' placeholder='Username' value=identification}}
-	<label for="password">Password</label>
-	{{input id='password' placeholder='Password' type='password' value=password}}
-	<button type="submit">Login</button>
-</form>
+<section data-template="login">
+	<form {{action 'authenticate' on='submit'}}>
+		<label for="identification">Login</label>
+		{{input id='identification' placeholder='Username' value=identification}}
+		<label for="password">Password</label>
+		{{input id='password' placeholder='Password' type='password' value=password}}
+		<button type="submit">Login</button>
+	</form>
+</section>
