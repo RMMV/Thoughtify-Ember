@@ -1,11 +1,9 @@
 .website-intro {
 	font-family: 'Open Sans';
-	
-	// an ad hoc method of making the title vertically centered
+	color: white;
+
 	position: relative;
 	top:25vh;
-	
-	color: white;
 	text-align:center;
 
 	h1 {
@@ -19,15 +17,14 @@
 
 .sky {
 
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
 	// the sky should be blue
 	background-color: #3498db;
-
-	// we want the sky to fill the entire window
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	bottom: 0px;
-	right: 0px;
 
 	// it has the lowest possible z-index in this application
 	z-index:-273;
