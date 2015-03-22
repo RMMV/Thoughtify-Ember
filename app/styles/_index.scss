@@ -17,12 +17,18 @@
 	}
 }
 
-.falling-ideas-container {
+.sky {
+
+	// the sky should be blue
 	background-color: #3498db;
+
+	// we want the sky to fill the entire window
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	bottom: 0px;
 	right: 0px;
+
+	// it has the lowest possible z-index in this application
 	z-index:-273;
 }
