@@ -1,31 +1,43 @@
-.website-intro {
-	font-family: 'Open Sans';
-	color: white;
-
-	position: relative;
-	top:25vh;
-	text-align:center;
-
-	h1 {
-		font-size: 500%;
-		
-		// ensure the slogan and the website title 
-		// are adaquately spaced out
-		margin-bottom: 0.1em;
+.index {
+	
+	expand() {
+		position fixed;
+		top 0;
+		bottom 0;
+		left 0;
+		right 0;
 	}
-}
+	
+	shift-down() {
+		position relative;
+		top 25vh;
+	}
 
-.sky {
+	.website-intro {
+		font-family 'Open Sans';
+		color white;
+		
+		text-align center;
+		shift-down();
 
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+		h1 {
+			font-size 500%;
+			
+			// ensure the slogan and the website title 
+			// are adaquately spaced out
+			margin-bottom 0.1em;
+		}
+	}
+	
+	.sky {
+		
+		// fill the entire background
+		expand();
+		
+		// the sky should be blue
+		background-color #3498db;
 
-	// the sky should be blue
-	background-color: #3498db;
-
-	// it has the lowest possible z-index in this application
-	z-index:-273;
+		// it has the lowest possible z-index in this application
+		z-index -273;
+	}
 }
