@@ -1,35 +1,38 @@
 import Ember from 'ember';
 import layout from '../templates/components/falling-idea';
 
+// this must be used because Velocity relies on a global 
+// Promise object. This mixin removes that requirement.
+import VelocityMixin from 'ember-velocity-mixin/main';
+
 let events = {
+
 	didInsertElement: function() {
 
 		let self = this;
-		let $ = Ember.$;
 
 		let eventualStyles = {
 			top: '100vh',
-			rotateZ: this.get('rotation'),
+			rotateZ: self.get('rotation'),
 		};
 
 		let options = {
-			duration: this.get('duration'),
-			delay: this.get('delay'),
+			duration: self.get('duration'),
+			delay: self.get('delay'),
 		};
 
 		// update the position of this element
-		$(this.element).css('left', this.get('left'));
+		self.css('left', self.get('left'));
 
-		$.Velocity
-			.animate(this.element, eventualStyles, options)
-			.then(function(){
+		self.animate(eventualStyles, options)
+			.then(function() {
 				self.sendAction('after-fall');
 			});
 	}
 };
 
 export default Ember.Component.extend(
-	events, {
+	VelocityMixin, events, {
 		layout: layout,
 		classNames: ['falling-idea'],
 		left: 0,

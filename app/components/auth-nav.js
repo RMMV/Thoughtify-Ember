@@ -8,7 +8,7 @@ let actions = {
 	register: function() {
 		this.sendAction('register');
 	}
-}
+};
 
 export default Ember.Component.extend({
 	layout: layout,
