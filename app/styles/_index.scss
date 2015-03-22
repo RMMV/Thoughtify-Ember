@@ -1,6 +1,20 @@
-.site-title {
+.site-intro {
 	font-family: 'Open Sans';
+	
+	// an ad hoc method of making the title vertically centered
+	position: relative;
+	top:30vh;
+	
 	color: white;
+	text-align:center;
+
+	h1 {
+		font-size: 500%;
+		
+		// ensure the slogan and the website title 
+		// are adaquately spaced out
+		margin-bottom: 0.1em;
+	}
 }
 
 .falling-ideas-container {
