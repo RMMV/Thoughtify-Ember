@@ -32,7 +32,7 @@ let actions = {
 		this.transitionToRoute('login');
 	},
 	register: function() {
-		console.log('register was clicked');
+		this.transitionToRoute('register');
 	}
 };
 

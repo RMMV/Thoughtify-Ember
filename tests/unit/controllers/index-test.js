@@ -44,5 +44,14 @@ test('it should transition to the login route when the login action is triggered
 });
 
 test('it should transition to the register route when the register action is clicked', function(assert){
-	assert.ok(1);
+	let controller = this.subject();
+	
+	// spy on the transitionToRoute method
+	controller.transitionToRoute = sinon.spy();
+
+	// send the register action
+	controller.send('register');
+
+	// we went to the register route
+	assert.ok(controller.transitionToRoute.calledWith('register'));
 });
