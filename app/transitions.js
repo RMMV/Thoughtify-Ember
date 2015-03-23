@@ -4,5 +4,5 @@ export default function() {
 		this.toRoute('login'),
 		this.use('toLeft'),
 		this.reverse('toRight')
-	)
+	);
 }

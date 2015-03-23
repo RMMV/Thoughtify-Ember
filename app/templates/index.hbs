@@ -1,7 +1,10 @@
 <section data-template="index">
 	<section class="sky">
 
-		{{auth-nav login='login' register='register'}}
+		<nav class="auth">
+			<button type="button" {{action 'login'}}>Login</button>
+			<button type="button" {{action 'register'}}>Register</button>
+		</nav>
 
 		<hgroup>
 			<h1> Thoughtify </h1>
@@ -14,7 +17,8 @@
 				delay=idea.delay 
 				rotation=idea.rotation 
 				left=idea.left
-				after-fall='createIdea'}}
+				after-fall='createIdea'
+			}}
 
 				Idea Number {{index}}
 			{{/falling-idea}}
