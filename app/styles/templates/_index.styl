@@ -1,4 +1,5 @@
 @import '../shared/_buttons';
+@import '../shared/_sky';
 	
 [data-template='index']
 	
@@ -20,20 +21,12 @@
 	min-width 100vw
 
 	section.sky
-		// fill the entire screen
-		expand() 
-			position fixed
-			top 0
-			bottom 0
-			left 0
-			right 0
 		
+		sky();
+
 		shift-down() 
 			position relative
 			top 20vh
-
-		expand()
-		background-color #3498db
 
 		hgroup
 			font-family 'Open Sans'
