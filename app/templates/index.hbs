@@ -11,6 +11,31 @@
 			<h2> Lorem ipsum dolor sit amet, consectetur. </h2>
 		</hgroup>
 
+		<section class="login-form">
+		
+			<form {{action 'authenticate' on='submit'}}>
+
+				<label for="identification">Login</label>
+				
+				{{input 
+					id='identification' 
+					placeholder='Username' 
+					value=identification
+				}}
+
+				<label for="password">Password</label>
+
+				{{input 
+					id='password' 
+					placeholder='Password' 
+					type='password' 
+					value=password
+				}}
+
+				<button type="submit">Login</button>
+			</form>
+		</section>
+
 		{{#each fallingIdeas as |idea index|}}
 			{{#falling-idea 
 				duration=idea.duration 

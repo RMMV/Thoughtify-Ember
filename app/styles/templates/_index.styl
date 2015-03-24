@@ -1,39 +1,48 @@
 @import '../shared/_buttons';
 @import '../shared/_sky';
+@import '../shared/_form';
 	
 [data-template='index']
-	
-	nav.auth
-		align-right() 
-			display flex
-			flex-direction row
-			justify-content flex-end
-			
-		align-right()
-		
-		padding 1rem 1rem 1rem 1rem
-
-		button
-			transparent-button()
 
 	// liquid-fire fixes
 	min-height 100vh
 	min-width 100vw
+	
+	section.login-form 
+		
+		center(33vw)
+		visibility hidden
+
+		background-color rgba(0,0,0,0.5)
+		border-radius 0.25rem
+		padding 1rem
+		color white
+		
+		box-shadow 0.25rem 0.25rem 1rem black
+		
+		h1
+			margin 0 0 0.5rem 0
+			text-align center
+
+		form
+			form();
+		
 
 	section.sky
 		
 		sky();
 
-		shift-down() 
-			position relative
-			top 20vh
-
 		hgroup
+			
+			shift-down() 
+				position relative
+				top 20vh
+			
+			shift-down()
+			text-align center
+			
 			font-family 'Open Sans'
 			color white
-			
-			text-align center
-			shift-down()
 
 			h1
 				font-size 500%
@@ -41,4 +50,16 @@
 				// ensure the slogan and the website title 
 				// are adaquately spaced out
 				margin-bottom 0.1em
-	
+		
+		nav.auth
+			align-right() 
+				display flex
+				flex-direction row
+				justify-content flex-end
+				
+			align-right()
+			
+			padding 1rem 1rem 1rem 1rem
+
+			button
+				transparent-button()

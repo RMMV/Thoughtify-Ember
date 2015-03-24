@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import VelocityMixin from 'ember-velocity-mixin/main';
 
 function inRange(max, min) {
 	return Math.round((Math.random() * (max - min)) + min);
@@ -29,14 +30,19 @@ let actions = {
 		});
 	},
 	login: function() {
-		this.transitionToRoute('login');
+		let hgroup = Ember.$('.sky > hgroup');
+		this.animate(hgroup, {top: '0'}, {duration: 1000});
+
+		// fade the login form in from the background
+		let form = Ember.$('.login-form');
+		form.css('visibility', 'visible').hide().fadeIn('slow');
 	},
 	register: function() {
-		this.transitionToRoute('register');
+		
 	}
 };
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(VelocityMixin, {
 	fallingIdeas: ideas,
 	actions: actions
 });
