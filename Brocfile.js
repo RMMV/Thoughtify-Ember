@@ -1,12 +1,14 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var nib = require('nib');
 var jeet = require('jeet');
+var rupture = require('rupture'); // include later maybe
+var axis = require('axis');
+var autoprefixer = require('autoprefixer-stylus');
 
 var app = new EmberApp({
 	stylusOptions: {
-		use: [ nib(), jeet()],
+		use: [ axis({implicit: false}), autoprefixer(), jeet()],
 	}
 });
 
