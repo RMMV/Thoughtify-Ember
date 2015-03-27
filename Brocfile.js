@@ -8,7 +8,7 @@ var autoprefixer = require('autoprefixer-stylus');
 
 var app = new EmberApp({
 	stylusOptions: {
-		use: [ axis({implicit: false}), autoprefixer(), jeet()],
+		use: [ axis({implicit: false}), autoprefixer(), jeet(), rupture()],
 	}
 });
 

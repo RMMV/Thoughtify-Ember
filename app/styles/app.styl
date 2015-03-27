@@ -1,9 +1,17 @@
-@import 'nib';
-@import 'axis';
-@import 'jeet';
+@import 'nib'
+@import 'axis'
+@import 'jeet'
+@import 'rupture'
 
-// edit();
-normalize-css();
+// edit()
+normalize-css()
 
-@import 'components';
-@import 'templates';
+// https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+html
+	box-sizing border-box
+
+*, *:before, *:after
+	box-sizing inherit
+
+@import 'components'
+@import 'templates'

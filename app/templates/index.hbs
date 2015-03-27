@@ -2,8 +2,10 @@
 	<section class="sky">
 
 		<nav class="auth">
-			<button type="button" {{action 'login'}}>Login</button>
-			<button type="button" {{action 'register'}}>Register</button>
+			<ul>
+				<li><a {{action 'login'}}>Login</a></li>
+				<li><a {{action 'register'}}>Register</a></li>
+			</ul>
 		</nav>
 
 		<hgroup>
@@ -15,24 +17,30 @@
 		
 			<form {{action 'authenticate' on='submit'}}>
 
-				<label for="identification">Login</label>
-				
-				{{input 
-					id='identification' 
-					placeholder='Username' 
-					value=identification
-				}}
+				<div class="field">
+					<label for="identification">Login</label>
+					
+					{{input 
+						id='identification' 
+						placeholder='Username' 
+						value=identification
+					}}
 
-				<label for="password">Password</label>
+				</div>
 
-				{{input 
-					id='password' 
-					placeholder='Password' 
-					type='password' 
-					value=password
-				}}
+				<div class="field">
+					<label for="password">Password</label>
 
-				<button type="submit">Login</button>
+					{{input 
+						id='password' 
+						placeholder='Password' 
+						type='password' 
+						value=password
+					}}
+				</div>
+				<div class="field">
+					<button type="submit">Login</button>
+				</div>
 			</form>
 		</section>
 

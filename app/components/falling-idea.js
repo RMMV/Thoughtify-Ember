@@ -39,7 +39,6 @@ function didInsertElement() {
 
 	$.Velocity.animate($element, eventualStyles, options)
 		.then(function() {
-			console.log('running action');
 			self.sendAction('after-fall');
 		});
 }

@@ -1,65 +1,74 @@
-@import '../shared/_buttons';
-@import '../shared/_sky';
-@import '../shared/_form';
-	
+full-center(width = 50vw)
+	width width
+	position fixed
+	transform translateX(-50%) translateY(-50%)
+	left 50vw
+	top 50vh
+
+sky(color = #3498db)
+	position fixed
+	top 0
+	bottom 0
+	left 0
+	right 0
+	background-color #3498db
+
 [data-template='index']
 
 	// liquid-fire fixes
-	min-height 100vh
-	min-width 100vw
-	
-	section.login-form 
-		
-		center(33vw)
-		visibility hidden
-
-		background-color rgba(0,0,0,0.5)
-		border-radius 0.25rem
-		padding 1rem
-		color white
-		
-		box-shadow 0.25rem 0.25rem 1rem black
-		
-		h1
-			margin 0 0 0.5rem 0
-			text-align center
-
-		form
-			form();
-		
+	// don't screw with this, future me
+	height 100vh
+	width 100vw
+	position fixed
 
 	section.sky
 		
-		sky();
+		sky()
+		
+		section.login-form 
+		
+			// form aligned dead center of page
+			full-center()
+			min-width 500px
+			
+			// form has rounded edges
+			padding 0.75rem
+			border-radius 0.25rem
+			
+			// ensure form is hidden when we start off
+			visibility hidden
 
+			form 
+				
+				// make sure fields are nicely spaced out
+				.field
+					field(left)
+					width 100%
+				
+				label
+					label()
+				input
+					input(width: 100%)
+				button
+					button(size: 'large')
+					width 100%
+		
+		nav
+			navigation()
+		
 		hgroup
 			
-			shift-down() 
-				position relative
-				top 20vh
-			
-			shift-down()
-			text-align center
-			
-			font-family 'Open Sans'
+			full-center(100vw)
 			color white
-
-			h1
-				font-size 500%
-				
-				// ensure the slogan and the website title 
-				// are adaquately spaced out
-				margin-bottom 0.1em
-		
-		nav.auth
-			align-right() 
-				display flex
-				flex-direction row
-				justify-content flex-end
-				
-			align-right()
 			
-			padding 1rem 1rem 1rem 1rem
-
-			button
-				transparent-button()
+			h1
+				h1()
+			h2 
+				h2()
+				
+			h1
+			h2
+				text-align center
+				margin-bottom 0.5rem
+				margin-top 0.1rem
+				

@@ -18,16 +18,11 @@ export default Ember.Controller.extend({
 **/
 
 function login() {
-	let hgroup = $('.sky > hgroup');
-	$.Velocity.animate(hgroup, {top: '0'}, {duration: 1000});
-
-	// fade the login form in from the background
-	let form = $('.login-form');
-	form.css('visibility', 'visible').hide().fadeIn('slow');
+	clickTransition();
 }
 
 function register() {
-
+	clickTransition();
 }
 
 function createIdea() {
@@ -42,6 +37,30 @@ function createIdea() {
 /**
 	HELPER METHODS BELOW
 **/
+
+function clickTransition(){
+
+	let hgroup 	= $('.sky > hgroup');
+	let form 	= $('.login-form');
+
+	// the form and hgroup are positioned fixed
+	// this works regardless of if the items are styled display:none
+	let offset = ($(window).height() - form.outerHeight() - hgroup.outerHeight())/2;
+
+	let style = { 
+		top: offset + 'px',
+		opacity: offset < 50 ? 0 : 1
+	};
+
+	let options = {duration: 1000};
+
+	$.Velocity
+		.animate(hgroup, style, options)
+		.then(() => { 
+			form.css('visibility', 'visible').hide().fadeIn(1000); 
+			clickTransition = () => {};
+		});
+}
 
 function inRange(max, min) {
 	return Math.round((Math.random() * (max - min)) + min);
