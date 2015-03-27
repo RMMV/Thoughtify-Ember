@@ -42,15 +42,16 @@ sky(color = #3498db)
 				
 				// make sure fields are nicely spaced out
 				.field
-					field(left)
-					width 100%
-				
+					field(direction: left, width: 100%)
+					padding 0.25rem 1rem
 				label
 					label()
+					bold()
+					color white
 				input
 					input(width: 100%)
 				button
-					button(size: 'large')
+					glossy-button(color: white)
 					width 100%
 		
 		nav
