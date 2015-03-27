@@ -6,10 +6,12 @@ let ideas = createIdeas(2);
 
 export default Ember.Controller.extend({
 	fallingIdeas: ideas,
+	loggingIn: false,
 	actions: { 
 		createIdea: createIdea, 
 		login: login, 
-		register: register 
+		register: register,
+		processInput: processInput
 	}
 });
 
@@ -18,11 +20,17 @@ export default Ember.Controller.extend({
 **/
 
 function login() {
+	this.set('loggingIn', true);
 	clickTransition();
 }
 
 function register() {
+	this.set('loggingIn', false);
 	clickTransition();
+}
+
+function processInput() {
+	console.log(this.get('identification'), this.get('password'));
 }
 
 function createIdea() {
@@ -41,7 +49,7 @@ function createIdea() {
 function clickTransition(){
 
 	let hgroup 	= $('.sky > hgroup');
-	let form 	= $('.login-form');
+	let form 	= $('.forms');
 
 	// the form and hgroup are positioned fixed
 	// this works regardless of if the items are styled display:none

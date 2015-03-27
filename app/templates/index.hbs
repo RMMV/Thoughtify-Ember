@@ -13,12 +13,13 @@
 			<h2> Lorem ipsum dolor sit amet, consectetur. </h2>
 		</hgroup>
 
-		<section class="login-form">
-		
-			<form {{action 'authenticate' on='submit'}}>
+		<section class="forms">
+			<form {{action 'processInput' on='submit'}}>
 
 				<div class="field">
-					<label for="identification">Login</label>
+					<label for="identification">
+						username
+					</label>
 					
 					{{input 
 						id='identification' 
@@ -29,7 +30,7 @@
 				</div>
 
 				<div class="field">
-					<label for="password">Password</label>
+					<label for="password">password</label>
 
 					{{input 
 						id='password' 
@@ -39,7 +40,15 @@
 					}}
 				</div>
 				<div class="field">
-					<button type="submit">Login</button>
+					<button type="submit">
+						
+						{{#if loggingIn}}
+							Login
+						{{else}}
+							Register
+						{{/if}}
+
+					</button>
 				</div>
 			</form>
 		</section>
