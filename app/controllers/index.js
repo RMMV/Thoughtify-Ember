@@ -44,7 +44,7 @@ function loginOrRegister() {
 				{ identification, password }
 			)
 			.then(() => {
-				console.log('login succeeded', arguments);
+				self.transitionToRoute('ideas');
 			})
 			.catch(() => {
 				console.log('login failed', arguments);

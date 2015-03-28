@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('ideas');
+  this.route('logout');
 });
 
 export default Router;
