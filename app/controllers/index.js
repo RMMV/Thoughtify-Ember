@@ -7,6 +7,11 @@ let ideas = createIdeas(2);
 export default Ember.Controller.extend({
 	fallingIdeas: ideas,
 	loggingIn: false,
+	identificationPlaceholder: Ember.computed('loggingIn', function(){
+		let loggingIn = this.get('loggingIn');
+		let placeholder  = ! loggingIn ? 'email' : 'username or email';
+		return placeholder;
+	}),
 	actions: { 
 		createIdea: createIdea, 
 		login: login, 
@@ -32,7 +37,7 @@ function register() {
 function loginOrRegister() {
 	let self 			= this;
 	let loggingIn 		= self.get('loggingIn');
-	let identification 	= self.get('username');
+	let identification 	= self.get('identification');
 	let password 		= self.get('password');
 	let session 		= self.get('session');
 
@@ -48,7 +53,7 @@ function loginOrRegister() {
 			})
 			.catch(() => {
 				console.log('login failed', arguments);
-			})
+			});
 
 
 	} else {

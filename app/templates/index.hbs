@@ -20,12 +20,12 @@
 			<form {{action 'loginOrRegister' on='submit'}}>
 
 				<div class="field">
-					<label for="username"> username: </label>
+					<label for="identification"> username or email: </label>
 					
 					{{input 
-						id='username' 
-						placeholder='username'
-						value=username
+						id='identification' 
+						placeholder=identificationPlaceholder
+						value=identification
 						autocomplete='off'
 					}}
 
