@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
 		createIdea: createIdea, 
 		login: login, 
 		register: register,
-		processInput: processInput
+		loginOrRegister: loginOrRegister
 	}
 });
 
@@ -29,8 +29,8 @@ function register() {
 	clickTransition();
 }
 
-function processInput() {
-	console.log(this.get('identification'), this.get('password'));
+function loginOrRegister() {
+	console.log(this.get('username'), this.get('password'));
 }
 
 function createIdea() {
