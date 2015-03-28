@@ -1,4 +1,4 @@
-full-center(width = 50vw)
+full-center(width = 100vw)
 	width width
 	position fixed
 	transform translateX(-50%) translateY(-50%)
@@ -12,6 +12,15 @@ sky(color = #3498db)
 	left 0
 	right 0
 	background-color #3498db
+
+// requires position relative
+@keyframes bounce-right
+	0%
+		right 1rem
+	50% 
+		right 3rem
+	100% 
+		right 1rem
 
 [data-template='index']
 
@@ -28,12 +37,8 @@ sky(color = #3498db)
 		section.forms 
 		
 			// form aligned dead center of page
-			full-center()
+			full-center(50vw)
 			min-width 500px
-			
-			// form has rounded edges
-			padding 0.75rem
-			border-radius 0.25rem
 			
 			// ensure form is hidden when we start off
 			visibility hidden
@@ -46,9 +51,6 @@ sky(color = #3498db)
 					padding 0.25rem 0.75rem
 					
 				label
-					label()
-					bold()
-					color white
 					display none
 				input
 					input(width: 100%)
@@ -56,22 +58,59 @@ sky(color = #3498db)
 					glossy-button(color: green)
 					width 100%
 		
-		nav
+		nav.auth
 			navigation()
 			
 			a
 				bold()
+		
+		nav.app
+			
+			// positioning the link center-right
+			text-align right
+			full-center(100vw)
+			
+			// nav overpowers other elements because it's the 
+			// furthest down in the html document
+			z-index -1
+			
+			a
+				fs(6rem)
+				link(color: rgba(255,255,255,0.75), style: 'glow')
+				
+				// ensure that people can't select the arrow
+				user-select none
+				
+				// animation
+				position relative
+
+				+above(1000px)
+					animation bounce-right 2s infinite
+				
+				// doesn't make sense to have arrow on mobile screens
+				+below(1000px)
+					display none
 
 		hgroup
 			
-			full-center(100vw)
+			/*
+				This is a hack. The app navigation bar is furthest down in the html doc
+				so it's rendered above every other element. To make the forms editable 
+				(they're hidden behind the app navigation bar), we have to set the z-index
+				of the navigation bar to -1. But this makes it so that this hgroup goes 
+				infront of the nav, rendering it useless. Therefore, I set the width to 
+				75vw, leaving enough room to click on the right-arrow inside the app
+				navigation bar. 
+			*/
+				
+			full-center(75vw)
 			color white
 			
 			h1
-				h1()
+				h1(size: 3.6)
 				margin 0
 			h2 
-				h2()
+				h2(size:1.2)
 				margin 0 0 1rem 0
 				
 			h1
