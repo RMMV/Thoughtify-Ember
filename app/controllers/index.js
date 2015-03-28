@@ -34,6 +34,11 @@ function processInput() {
 }
 
 function createIdea() {
+
+	if (ideas.get('length') > 100) {
+		ideas.shiftObject();
+	}
+
 	ideas.pushObject({
 		delay: 1500,
 		duration: inRange(2000, 3000),
