@@ -31,6 +31,13 @@ function register() {
 
 function loginOrRegister() {
 	console.log(this.get('username'), this.get('password'));
+
+	let loggingIn = this.get('loggingIn');
+
+	if (loggingIn) {
+
+	}
+
 }
 
 function createIdea() {
@@ -40,8 +47,8 @@ function createIdea() {
 	}
 
 	ideas.pushObject({
-		delay: 1500,
-		duration: inRange(2000, 3000),
+		delay: 3500,
+		duration: inRange(3000, 5000),
 		left: inRange(0, 80) + 'vw',
 		rotation: inRange(-45, 45)
 	});
@@ -83,8 +90,8 @@ function createIdeas(count) {
 	let arr = [];
 	for (let i = 0; i < count; i++) {
 		arr.pushObject({
-			delay: i * 1500,
-			duration: inRange(2000, 4000),
+			delay: i * 6000,
+			duration: inRange(4000, 6000),
 			left: inRange(0, 80) + 'vw',
 			rotation: inRange(-45, 45)
 		});

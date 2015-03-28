@@ -9,8 +9,8 @@ export default Ember.Component.extend({
 	classNames: ['falling-idea'],
 	left: 0,
 	delay: 0,
-	duration: 4999,
-	rotation: 30,
+	duration: 1000,
+	rotation: 45,
 	didInsertElement: didInsertElement
 });
 
@@ -38,7 +38,7 @@ function didInsertElement() {
 	$element.css('left', left);
 
 	$.Velocity.animate($element, eventualStyles, options)
-		.then(function() {
+		.then(() => {
 			self.sendAction('after-fall');
 		});
 }
