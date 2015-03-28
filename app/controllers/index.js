@@ -30,12 +30,30 @@ function register() {
 }
 
 function loginOrRegister() {
-	console.log(this.get('username'), this.get('password'));
-
-	let loggingIn = this.get('loggingIn');
+	let self 			= this;
+	let loggingIn 		= self.get('loggingIn');
+	let identification 	= self.get('username');
+	let password 		= self.get('password');
+	let session 		= self.get('session');
 
 	if (loggingIn) {
 
+		session
+			.authenticate(
+				'simple-auth-authenticator:token',
+				{ identification, password }
+			)
+			.then(() => {
+				console.log('login succeeded', arguments);
+			})
+			.catch(() => {
+				console.log('login failed', arguments);
+			})
+
+
+	} else {
+		/* registering */
+		
 	}
 
 }
