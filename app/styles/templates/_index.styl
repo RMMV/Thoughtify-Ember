@@ -11,8 +11,8 @@ sky(color = #3498db)
 	bottom 0
 	left 0
 	right 0
-	background-color #3498db
-
+	bg('images/clouds.png',no-repeat,  color)
+	
 // requires position relative
 @keyframes bounce-right
 	0%
@@ -59,8 +59,13 @@ sky(color = #3498db)
 					width 100%
 		
 		nav.auth
-			navigation()
 			
+			navigation(bgColor: rgba(255,255,255,0), linkColor: black, size: 2)
+
+			// we need a completely transparent nav, cancel out these defaults
+			box-shadow none
+			border none
+
 			a
 				bold()
 		
