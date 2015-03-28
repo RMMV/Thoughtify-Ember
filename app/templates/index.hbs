@@ -17,28 +17,31 @@
 			<form {{action 'processInput' on='submit'}}>
 
 				<div class="field">
-					<label for="identification">
-						username
+					<label for="username">
+						your username:
 					</label>
 					
 					{{input 
-						id='identification' 
-						placeholder='Username' 
-						value=identification
+						id='username' 
+						placeholder='swagjot69'
+						value=username
+						autocomplete='off'
 					}}
 
 				</div>
 
 				<div class="field">
-					<label for="password">password</label>
+					<label for="password">and the password: </label>
 
 					{{input 
 						id='password' 
-						placeholder='Password' 
 						type='password' 
+						placeholder='••••••••'
 						value=password
 					}}
+
 				</div>
+
 				<div class="field">
 					<button type="submit">
 						
