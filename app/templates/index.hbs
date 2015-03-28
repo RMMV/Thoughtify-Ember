@@ -1,12 +1,14 @@
 <section data-template="index">
 	<section class="sky">
 
-		<nav class="auth">
-			<ul>
-				<li><a {{action 'login'}}>Login</a></li>
-				<li><a {{action 'register'}}>Register</a></li>
-			</ul>
-		</nav>
+		{{#unless session.isAuthenticated}}
+			<nav class="auth">
+				<ul>
+					<li><a {{action 'login'}}>Login</a></li>
+					<li><a {{action 'register'}}>Register</a></li>
+				</ul>
+			</nav>
+		{{/unless}}
 
 		<hgroup>
 			<h1> Thoughtify </h1>
