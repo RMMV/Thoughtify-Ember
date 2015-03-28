@@ -44,7 +44,7 @@ function loginOrRegister() {
 				{ identification, password }
 			)
 			.then(() => {
-				self.transitionToRoute('ideas');
+				self.transitionToRoute('app');
 			})
 			.catch(() => {
 				console.log('login failed', arguments);
