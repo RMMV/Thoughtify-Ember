@@ -7,6 +7,19 @@ from 'ember-qunit';
 moduleFor('controller:index', 'Unit - IndexController', {
 	// Specify the other units that are required for this test.
 	// needs: ['controller:foo']
+	beforeEach() {
+		// stub session
+		let controller = this.subject();
+		
+		let authenticate = sinon.stub();
+		authenticate.returns(Ember.RSVP.resolve());
+
+		Ember.run(function(){
+			controller.set('session', {
+				authenticate: authenticate
+			});
+		});
+	}
 });
 
 // Replace this with your real tests.
@@ -30,15 +43,12 @@ test('it should create a new idea when the createIdea action is triggered', func
 	assert.equal(length + 1, newLength);
 });
 
-test('it should transition to the application after the login action is triggered', function(assert) {
-	let controller = this.subject();
-	
-	// spy on the transitionToRoute method
-	controller.transitionToRoute = sinon.spy();
+test('it can redirect the user to the application after successful login', function(assert) {
 
-	// the session is a dependency, so we stub it out
-	controller.session = { authenticate: sinon.stub() };
-	controller.session.authenticate.onCall(0).returns(Ember.RSVP.resolve());
+	let controller = this.subject();
+
+	// use a stub because spy delegates to the underlying implementation
+	sinon.stub(controller, 'transitionToRoute');
 
 	Ember.run(function(){
 		controller.set('loggingIn', true);
@@ -47,15 +57,17 @@ test('it should transition to the application after the login action is triggere
 	// send the login action
 	controller.send('loginOrRegister');
 
-	// we went to the login route
-	assert.ok(controller.transitionToRoute.getCall(0).calledWith('app'));
+	Ember.run.later(function(){
+		assert.ok(controller.transitionToRoute.getCall(0).calledWith('app'));
+	});
+
 });
 
 test('it should transition to the register route when the register action is clicked', function(assert){
 	let controller = this.subject();
 	
 	// spy on the transitionToRoute method
-	controller.transitionToRoute = sinon.spy();
+	sinon.spy(controller, 'transitionToRoute');
 
 	// send the register action
 	controller.send('register');

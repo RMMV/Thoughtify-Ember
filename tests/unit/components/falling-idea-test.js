@@ -7,6 +7,13 @@ from 'ember-qunit';
 moduleForComponent('falling-idea', {
 	// specify the other units that are required for this test
 	// needs: ['component:foo', 'helper:bar']
+	beforeEach() {
+
+		// $.Velocity can't be trusted, so we stub it out
+		$.Velocity.animate = sinon.stub();
+		$.Velocity.animate.returns(Ember.RSVP.resolve());
+
+	}
 });
 
 test('it renders', function(assert) {
@@ -43,11 +50,6 @@ test('it should fall a predetermined time after it\'s been rendered', function(a
 		component.set('rotation', 40);
 	});
 
-	// we're going to spy on the animate function
-	$.Velocity.animate = sinon.stub();
-
-	// we're going to return a promise so that the call to animate can be chained
-	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
 	this.render();
 
 	// check the arguments of component.animate
@@ -70,11 +72,7 @@ test('it should trigger an \'after-fall\' action after the animation\'s done', f
 	let component = this.subject();
 
 	// we're going to spy on the sendAction method
-	component.sendAction = sinon.spy();
-	
-	// ensure that the animation completes successfully
-	$.Velocity.animate = sinon.stub();
-	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
+	sinon.spy(component, 'sendAction');
 
 	// render the component
 	this.render();
@@ -91,19 +89,9 @@ test('it can set the element\'s horizontal position', function(assert) {
 		component.set('left', 10);
 	});
 
-	// replace the css method
-	$.css = sinon.spy();
-	$.Velocity.animate = sinon.stub();
-
-	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
-
 	// render component
 	this.render();
+	
+	assert.equal(component.element.style.left, '10px');
 
-	// grab method arguments
-	let args = $.css.getCall(0).args;
-
-	// make sure the horizontal position was altered
-	assert.equal(args[0], 'left');
-	assert.equal(args[1], 10);
 });

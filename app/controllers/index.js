@@ -49,9 +49,9 @@ function loginOrRegister() {
 				{ identification, password }
 			)
 			.then(() => {
-				self.transitionToRoute('app');
+				this.transitionToRoute('app');
 			})
-			.catch(() => {
+			.catch((r) => {
 				console.log('login failed', arguments);
 			});
 
