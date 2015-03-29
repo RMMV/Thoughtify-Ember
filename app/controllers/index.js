@@ -51,8 +51,8 @@ function loginOrRegister() {
 			.then(() => {
 				this.transitionToRoute('app');
 			})
-			.catch((r) => {
-				console.log('login failed', arguments);
+			.catch((error) => {
+				console.error('login failed', error);
 			});
 
 
