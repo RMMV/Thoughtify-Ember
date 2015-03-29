@@ -2,7 +2,7 @@
   "name": "thoughtify-ember",
   "dependencies": {
     "jquery": "^1.11.2",
-    "ember": "1.11.0-beta.5",
+    "ember": "1.11.0",
     "ember-data": "1.0.0-beta.16",
     "ember-resolver": "~0.1.12",
     "loader.js": "ember-cli/loader.js#3.2.0",
@@ -14,6 +14,6 @@
     "qunit": "~1.17.1",
     "ember-simple-auth": "0.7.3",
     "sinon": "http://sinonjs.org/releases/sinon-1.12.2.js",
-    "velocity": "~1.2.2"
+    "bluebird": "~2.9.16"
   }
 }

@@ -22,7 +22,7 @@
     "autoprefixer-stylus": "^0.5.0",
     "axis": "^0.3.1",
     "broccoli-asset-rev": "^2.0.0",
-    "ember-cli": "0.2.0",
+    "ember-cli": "0.2.1",
     "ember-cli-app-version": "0.3.2",
     "ember-cli-babel": "^4.0.0",
     "ember-cli-content-security-policy": "0.3.0",
@@ -39,7 +39,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-sinon": "0.0.3",
     "jeet": "^6.1.2",
-    "liquid-fire": "git://github.com/ef4/liquid-fire",
+    "liquid-fire": "0.18.0",
     "nib": "^1.1.0",
     "rupture": "^0.6.1"
   }

@@ -12,8 +12,6 @@ var app = new EmberApp({
 	}
 });
 
-app.import('bower_components/velocity/velocity.js');
-
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
