@@ -101,7 +101,9 @@ function clickTransition(){
 		.animate(hgroup, style, options)
 		.then(() => { 
 			form.css('visibility', 'visible').hide().fadeIn(1000); 
+			/* jshint ignore:start */
 			clickTransition = () => {};
+			/* jshint ignore:end */
 		});
 }
 
