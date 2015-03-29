@@ -21,16 +21,6 @@ test('it renders', function(assert) {
 	assert.equal(component._state, 'inDOM');
 });
 
-test('its instance has an .animate property', function(assert){
-	let component = this.subject();
-	assert.ok(component.animate);
-});
-
-test('its instance has a .css property', function(assert){
-	let component = this.subject();
-	assert.ok(component.css);
-});
-
 test('its DOM element has the class \'falling-idea\'', function(assert) {
 	let component = this.subject();
 	
@@ -54,18 +44,18 @@ test('it should fall a predetermined time after it\'s been rendered', function(a
 	});
 
 	// we're going to spy on the animate function
-	component.animate = sinon.stub();
+	$.Velocity.animate = sinon.stub();
 
 	// we're going to return a promise so that the call to animate can be chained
-	component.animate.onCall(0).returns(Ember.RSVP.resolve());
+	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
 	this.render();
 
 	// check the arguments of component.animate
-	let args = component.animate.getCall(0).args;
+	let args = $.Velocity.animate.getCall(0).args;
 
 	// grab styles and options
-	let styles = args[0];
-	let options = args[1];
+	let styles = args[1];
+	let options = args[2];
 
 	// verify the options forward the duration and the delay
 	assert.equal(options.duration, 30);
@@ -83,18 +73,18 @@ test('it should trigger an \'after-fall\' action after the animation\'s done', f
 	component.sendAction = sinon.spy();
 	
 	// ensure that the animation completes successfully
-	component.animate = sinon.stub();
-	component.animate.onCall(0).returns(Ember.RSVP.resolve());
+	$.Velocity.animate = sinon.stub();
+	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
 
 	// render the component
 	this.render();
 
 	// check if the call was made
-	assert.ok(component.sendAction.calledWith('after-fall'));
+	assert.ok(component.sendAction.getCall(0).calledWith('after-fall'));
 
 });
 
-test('it should programmatically alter the element\'s horizontal position', function(assert) {
+test('it can set the element\'s horizontal position', function(assert) {
 	let component = this.subject();
 
 	Ember.run(function(){
@@ -102,13 +92,16 @@ test('it should programmatically alter the element\'s horizontal position', func
 	});
 
 	// replace the css method
-	component.css = sinon.spy();
+	$.css = sinon.spy();
+	$.Velocity.animate = sinon.stub();
+
+	$.Velocity.animate.onCall(0).returns(Ember.RSVP.resolve());
 
 	// render component
 	this.render();
 
 	// grab method arguments
-	let args = component.css.getCall(0).args;
+	let args = $.css.getCall(0).args;
 
 	// make sure the horizontal position was altered
 	assert.equal(args[0], 'left');

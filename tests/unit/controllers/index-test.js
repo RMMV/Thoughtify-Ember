@@ -30,17 +30,25 @@ test('it should create a new idea when the createIdea action is triggered', func
 	assert.equal(length + 1, newLength);
 });
 
-test('it should transition to the login route when the login action is triggered', function(assert) {
+test('it should transition to the application after the login action is triggered', function(assert) {
 	let controller = this.subject();
 	
 	// spy on the transitionToRoute method
 	controller.transitionToRoute = sinon.spy();
 
+	// the session is a dependency, so we stub it out
+	controller.session = { authenticate: sinon.stub() };
+	controller.session.authenticate.onCall(0).returns(Ember.RSVP.resolve());
+
+	Ember.run(function(){
+		controller.set('loggingIn', true);
+	});
+
 	// send the login action
-	controller.send('login');
+	controller.send('loginOrRegister');
 
 	// we went to the login route
-	assert.ok(controller.transitionToRoute.calledWith('login'));
+	assert.ok(controller.transitionToRoute.getCall(0).calledWith('app'));
 });
 
 test('it should transition to the register route when the register action is clicked', function(assert){
