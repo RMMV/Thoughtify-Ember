@@ -1,0 +1,37 @@
+[data-template='app']
+	
+	link-color-bg = black
+	link-color = white
+	
+	nav
+		position fixed
+		top 0
+		left 0
+		height 100vh
+		
+		// a clearfix
+		group()
+		
+		+tablet()
+			width 3rem
+			
+		+desktop()
+			width 12rem
+			
+		background-color lighten(link-color-bg, 3%)
+
+		ul
+			reset-list()
+			
+			li 
+				a
+					background-color link-color-bg
+					display block
+					link(color: link-color, style: 'lighten')
+					padding 0.5rem 1rem 0.5rem 1.5rem
+			
+			// add spacing so the user knows one link from another
+			li:not(:last-child)
+				a
+					margin 0 0 0.1rem 0
+		
