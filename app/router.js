@@ -6,8 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('login');
-  this.route('secret');
+  this.resource('app', function() {
+    this.route('logout');
+  });
 });
 
 export default Router;

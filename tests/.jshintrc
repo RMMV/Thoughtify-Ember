@@ -21,7 +21,9 @@
     "andThen",
     "currentURL",
     "currentPath",
-    "currentRouteName"
+    "currentRouteName",
+    "sinon",
+    "Ember"
   ],
   "node": false,
   "browser": false,

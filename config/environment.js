@@ -26,7 +26,7 @@ module.exports = function(environment) {
 
 	ENV['simple-auth-token'] = {
 		serverTokenEndpoint: 'https://localhost:1337/users/login',
-		identificationField: 'username',
+		identificationField: 'identification',
 		passwordField: 'password',
 		tokenPropertyName: 'token',
 		authorizationPrefix: '',
@@ -38,7 +38,9 @@ module.exports = function(environment) {
 	};
 
 	ENV['contentSecurityPolicy'] = {
-		'connect-src': "https://localhost:1337"
+		'connect-src': "https://localhost:1337",
+		'font-src': "http://fonts.googleapis.com http://fonts.gstatic.com",
+		'style-src': "'self' http://fonts.googleapis.com 'unsafe-inline'"
 	};
 
 	if (environment === 'development') {

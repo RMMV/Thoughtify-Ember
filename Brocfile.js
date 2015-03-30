@@ -1,8 +1,16 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var jeet = require('jeet');
+var rupture = require('rupture'); // include later maybe
+var axis = require('axis');
+var autoprefixer = require('autoprefixer-stylus');
 
-var app = new EmberApp();
+var app = new EmberApp({
+	stylusOptions: {
+		use: [ axis({implicit: false}), autoprefixer(), jeet(), rupture()],
+	}
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

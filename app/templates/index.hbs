@@ -1,0 +1,80 @@
+<div data-template="index">
+
+	<section class="sky">
+
+		{{#unless session.isAuthenticated}}
+			<nav class="auth">
+				<ul>
+					<li><a {{action 'login'}}>Login</a></li>
+					<li><a {{action 'register'}}>Register</a></li>
+				</ul>
+			</nav>
+		{{/unless}}
+
+		<hgroup>
+			<h1> Thoughtify </h1>
+			<h2> Lorem ipsum dolor sit amet, consectetur. </h2>
+		</hgroup>
+
+		<section class="forms">
+			<form {{action 'loginOrRegister' on='submit'}}>
+
+				<div class="field">
+					<label for="identification"> username or email: </label>
+					
+					{{input 
+						id='identification' 
+						placeholder=identificationPlaceholder
+						value=identification
+						autocomplete='off'
+					}}
+
+				</div>
+
+				<div class="field">
+					<label for="password">password: </label>
+
+					{{input 
+						id='password' 
+						type='password' 
+						placeholder='password'
+						value=password
+					}}
+
+				</div>
+
+				<div class="field">
+					<button type="submit">
+						
+						{{#if loggingIn}}
+							Login
+						{{else}}
+							Register
+						{{/if}}
+
+					</button>
+				</div>
+			</form>
+		</section>
+
+		{{#each fallingIdeas as |idea index|}}
+			{{#falling-idea 
+				duration=idea.duration 
+				delay=idea.delay 
+				rotation=idea.rotation 
+				left=idea.left
+				after-fall='createIdea'
+			}}
+
+				Idea Number {{index}}
+			{{/falling-idea}}
+		{{/each}}
+		
+		<nav class="app">
+			{{#link-to 'app'}}&#x276f;{{/link-to}}
+		</nav>
+
+	</section>
+
+	{{!-- <img src="assets/images/clouds.png" alt="clouds" class="clouds"> --}}
+</div>
