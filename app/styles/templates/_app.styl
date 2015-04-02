@@ -1,9 +1,12 @@
-absolute(top = auto, bottom = auto, left = auto, right = auto)
-	position absolute
+pos(top = auto, bottom = auto, left = auto, right = auto)
 	top top
 	bottom bottom
 	left left 
 	right right 
+
+absolute(top = auto, bottom = auto, left = auto, right = auto)
+	position absolute
+	pos(top: top, bottom: bottom, left: left, right: right) 
 	
 
 [data-template='app']
@@ -14,8 +17,8 @@ absolute(top = auto, bottom = auto, left = auto, right = auto)
 	nav
 		// positioning
 		position fixed
-		top 0
-		left 0
+		pos(top: 0, left: 0)
+		
 		height 100vh
 		
 		group()
@@ -56,7 +59,7 @@ absolute(top = auto, bottom = auto, left = auto, right = auto)
 					display block
 					
 					// built-in axis mixin
-					link(color: link-color, style: 'lighten')
+					link(color: link-color, style: 'none')
 					
 					:last-child
 						// ensure the correct font-size is set
@@ -65,12 +68,20 @@ absolute(top = auto, bottom = auto, left = auto, right = auto)
 						padding 0.5rem 0
 						absolute(top:0, left: 1.5rem)
 					
+					// manual background change on hover
+					transition background-color 0.2s ease
+
 					:first-child
 						border none 
 						transition border-left 0.2s ease
 						absolute(top: 0, left: 0, bottom: 0)
 				
+				a.active
 				a:hover
+					
+					// manual background change on hover 
+					background-color lighten(link-color-bg, 10%)
+					
 					:first-child
 						border-left 0.2rem solid white
 
