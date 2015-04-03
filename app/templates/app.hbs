@@ -1,13 +1,13 @@
 <div data-template="app">
 
 	<nav>
-		<h1>thoughtify</h1>
+		<h1>{{#link-to 'index'}}thoughtify{{/link-to}}</h1>
 		<h2>main pages</h2>
 		<ul>
 			<li>
-				{{#link-to 'ideas'}}
+				{{#link-to 'app.index'}}
 			 		<span></span>
-			 		<span>browse</span>
+			 		<span>home</span>
 			 	{{/link-to}}
 			</li>
 			<li>
