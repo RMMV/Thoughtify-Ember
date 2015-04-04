@@ -1,2 +1,5 @@
-
-{{outlet}}
+<div data-template="ideas">
+	{{#each model as |idea index|}}
+		{{idea-card}}
+	{{/each}}
+</div>
