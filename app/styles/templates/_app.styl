@@ -39,22 +39,16 @@ fixed(top = auto, bottom = auto, left = auto, right = auto)
 		h1
 			h1()
 			text-align center
+			margin-bottom 1rem
+			color link-color
 			
 			a
 				link(color: link-color, style: 'none')
 			
-		h2 
-			h2(1.0)
-			normal()
-			margin 0.5rem 0rem 0.5rem 1.5rem
-			
-		h1
-		h2
-			color link-color
 
 		ul
 			reset-list()
-			padding 0 0.75rem
+			padding 0.75rem
 
 			li	
 				link-font-size = 1rem
@@ -97,7 +91,13 @@ fixed(top = auto, bottom = auto, left = auto, right = auto)
 				a.active
 					// manual background change on hover 
 					background-color lighten(link-color-bg, 10%)
-	
+		hr 
+			height 0 
+			border 0
+			border-top 0.1rem solid rgba(0,0,0,0.1)
+			border-bottom 0.1rem solid rgba(255,255,255,0.3)
+			margin 0 1rem
+
 	&>section
 		
 		+desktop()
