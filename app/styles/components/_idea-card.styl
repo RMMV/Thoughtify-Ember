@@ -1,14 +1,13 @@
 [data-component="idea-card"]
 	
-	group()
-	area()
+	bg-color = darken(white, 2.5%)
+	hover-bg-color = darken(bg-color, 5%)
 
-	margin-bottom 1rem
+	area(bg-color)
 
-	&:last-child
-		margin-bottom 0rem
-	
-	hover-color: darken(white, 7.5%)
+	// area adjusts margin, we want to reduce it
+	margin 0.75rem 0
+	hover-color hover-bg-color
 	
 	a
 		link(color: black, style: 'none')
