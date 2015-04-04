@@ -1,5 +1,7 @@
 <div data-template="ideas">
 	{{#each model as |idea index|}}
-		{{idea-card idea=idea}}
+		{{#link-to 'app.idea' idea}}
+			{{idea-card idea=idea}}
+		{{/link-to}}
 	{{/each}}
 </div>
