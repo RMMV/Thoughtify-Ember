@@ -4,10 +4,21 @@
 	hover-bg-color = darken(bg-color, 5%)
 
 	area(bg-color)
+	group()
 
 	// area adjusts margin, we want to reduce it
 	margin 0.75rem 0
 	hover-color hover-bg-color
 	
+	
 	a
+		col(3.25/4)
 		link(color: black, style: 'none')
+	
+	.idea-stats
+		col(0.75/4)
+		group()
+		
+		span
+			col(1/2)
+			text-align right

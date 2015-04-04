@@ -14,6 +14,7 @@
     "qunit": "~1.17.1",
     "ember-simple-auth": "0.7.3",
     "sinon": "http://sinonjs.org/releases/sinon-1.12.2.js",
-    "bluebird": "~2.9.16"
+    "bluebird": "~2.9.16",
+    "ember-cli-moment-shim": "~0.0.3"
   }
 }
