@@ -7,9 +7,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('app', function() {
-    this.route('logout');
-    this.resource('ideas');
+    this.resource('ideas', {path: '/'});
     this.resource('profile');
+    this.route('logout');
+    this.route('submit');
   });
 });
 
