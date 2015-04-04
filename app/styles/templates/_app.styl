@@ -8,26 +8,31 @@ absolute(top = auto, bottom = auto, left = auto, right = auto)
 	position absolute
 	pos(top: top, bottom: bottom, left: left, right: right) 
 	
+fixed(top = auto, bottom = auto, left = auto, right = auto)
+	position fixed
+	pos(top: top, bottom: bottom, left: left, right: right) 
+	
 
 [data-template='app']
 	
 	link-color-bg = black
 	link-color = lighten(grey, 50%)
+	sidebar-width-desktop = 15rem
+	sidebar-width-tablet = 4rem
 	
-	nav
+	&>nav
 		// positioning
-		position fixed
-		pos(top: 0, left: 0)
+		fixed(top: 0, left: 0)
 		
 		height 100vh
 		
 		group()
 		
 		+tablet()
-			width 4rem
+			width sidebar-width-tablet
 			
 		+desktop()
-			width 15rem
+			width sidebar-width-desktop
 			
 		background-color link-color-bg
 
@@ -92,5 +97,11 @@ absolute(top = auto, bottom = auto, left = auto, right = auto)
 				a.active
 					// manual background change on hover 
 					background-color lighten(link-color-bg, 10%)
-					
+	
+	&>section
 		
+		+desktop()
+			fixed(right: 0, top: 0, bottom: 0, left: sidebar-width-desktop)
+		
+		+tablet()
+			fixed(right: 0, top: 0, bottom: 0, left: sidebar-width-tablet)
