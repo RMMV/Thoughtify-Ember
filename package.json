@@ -40,7 +40,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-sinon": "0.0.3",
     "jeet": "^6.1.2",
-    "liquid-fire": "0.18.0",
+    "liquid-fire": "git://github.com/ef4/liquid-fire",
     "nib": "^1.1.0",
     "rupture": "^0.6.1"
   }
