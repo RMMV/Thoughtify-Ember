@@ -3,6 +3,8 @@
 	/* setup for the progress bar*/
 	relative()
 	
+	link-color = darken(blue, 50%)
+	hover-link-color = lighten(link-color, 25%)
 	bg-color = white
 	hover-bg-color = darken(bg-color, 2.5%)
 
@@ -10,7 +12,7 @@
 	group()
 
 	// area adjusts margin, we want to reduce it
-	margin 0.75rem 0
+	margin 0.75rem 3
 	hover-color hover-bg-color
 	
 	// adding a slight border around the idea
@@ -18,7 +20,10 @@
 	
 	a
 		span(3.25/4)
-		link(color: black, style: 'none')
+		link(color: link-color, style: 'none')
+	
+	a:hover
+		color hover-link-color
 	
 	.idea-stats
 		span(0.75/4)
@@ -27,9 +32,10 @@
 		span
 			col(1/2)
 			text-align right
-		
+			
 		.updated-at
-			color blue
+			border-left 1px solid rgba(grey, 25%)
+		
 	
 	[data-component="progress-bar"]
 		
