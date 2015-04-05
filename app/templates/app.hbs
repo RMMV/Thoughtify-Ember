@@ -1,2 +1,32 @@
-Welcome to your ember application!
-{{outlet}}
+<div data-template="app">
+
+	<nav>
+		<h1>{{#link-to 'index'}}thoughtify{{/link-to}}</h1>
+		<hr>
+		<ul>
+			<li>
+				{{#link-to 'app.ideas'}}
+			 		<span></span>
+			 		<span>ideas</span>
+			 	{{/link-to}}
+			</li>
+			<li>
+				{{#link-to 'app.submit'}}
+			 		<span></span>
+			 		<span>submit</span>
+				{{/link-to}}
+			</li>
+			<li>
+				{{#link-to 'profile'}}
+			 		<span></span>
+			 		<span>profile</span>
+				{{/link-to}}
+			</li>
+		</ul>
+	</nav>
+
+	<section>
+		{{outlet}}
+	</section>
+
+</div>

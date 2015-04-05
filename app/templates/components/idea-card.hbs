@@ -1,0 +1,10 @@
+{{#link-to 'app.idea' idea}}
+	{{idea.title}}
+{{/link-to}}
+
+<section class="idea-stats">
+	<span class="views">2</span>
+	<span class="updated-at">{{moment idea.updatedAt 'D MMM'}}</span>
+</section>
+
+{{progress-bar progress=progress}}

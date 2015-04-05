@@ -1,8 +1,8 @@
 export default function() {
 	this.transition(
-		this.fromRoute('index'),
-		this.toRoute('login'),
-		this.use('toLeft'),
-		this.reverse('toRight')
+		this.fromRoute('app.ideas'),
+		this.toRoute('app.idea'),
+		this.use('to-left'),
+		this.reverse('to-right')
 	);
 }

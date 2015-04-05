@@ -92,11 +92,11 @@ sky(color = #3498db)
 				// push the text up slightly to vertically center it 
 				bottom 0.5rem
 
-				+above(1000px)
+				+desktop()
 					animation bounce-right 2s infinite
 				
-				// doesn't make sense to have arrow on mobile screens
-				+below(1000px)
+				// doesn't make sense to have arrow on mobile/tablet screens
+				+below(rupture.desktop-cutoff)
 					display none
 
 		hgroup

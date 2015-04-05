@@ -1,0 +1,42 @@
+[data-component="idea-card"]
+	
+	/* setup for the progress bar*/
+	relative()
+	
+	link-color = darken(blue, 50%)
+	hover-link-color = lighten(link-color, 25%)
+	bg-color = white
+	hover-bg-color = darken(bg-color, 2.5%)
+
+	area(bg-color)
+	group()
+
+	// area adjusts margin, we want to reduce it
+	margin 0.75rem 3
+	hover-color hover-bg-color
+	
+	// adding a slight border around the idea
+	box-shadow 0 0 0.1rem grey
+	
+	a
+		span(3.25/4)
+		link(color: link-color, style: 'none')
+	
+	a:hover
+		color hover-link-color
+	
+	.idea-stats
+		span(0.75/4)
+		group()
+		
+		span
+			col(1/2)
+			text-align right
+			
+		.updated-at
+			border-left 1px solid rgba(grey, 25%)
+		
+	
+	[data-component="progress-bar"]
+		
+		absolute(bottom: 0, left: 0, right: 0)
