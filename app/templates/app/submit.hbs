@@ -1,5 +1,9 @@
 <div data-template="submit">
 	<form {{action 'submitIdea' on='submit'}}>
-		<button type='submit'>lol</button>
+		<label for="title">Title</label>
+		{{input type='text' id='title' value=idea.title}}
+		<label for="body">elaborate</label>
+		{{textarea type='text' id='body' rows='6' value=idea.body}}
+		<button type='submit'>Submit</button>
 	</form>
 </div>
